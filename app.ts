@@ -1,9 +1,10 @@
 import * as express from "express";
 import * as bodyParser from 'body-parser';
 import Repository from './repository';
+import config from './config'
 
 const app = express();
-const repository = new Repository('post');
+const repository = new Repository(config.table);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 

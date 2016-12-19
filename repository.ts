@@ -1,5 +1,6 @@
-import {DataStore} from 'js-data';
-import {SqlAdapter} from 'js-data-sql';
+import { DataStore } from 'js-data';
+import { SqlAdapter } from 'js-data-sql';
+import config from './config'
 
 export default class Repository {
   store: DataStore;
@@ -9,17 +10,10 @@ export default class Repository {
   constructor(tableName) {
     this.store = new DataStore();
     this.tableName = tableName;
-    // todo: get it from config
     this.sqlAdapter = new SqlAdapter({
       knexOpts: {
-        client: 'mysql',
-        connection: {
-          host: 'localhost',
-          user: 'newuser',
-          password: 'password',
-          database: 'posts',
-          port: '3306'
-        }
+        client: config.client,
+        connection: config.connection
       }
     });
 
