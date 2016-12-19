@@ -1,0 +1,27 @@
+{
+  "name": "test-ts-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/core-js": "^0.9.35",
+    "@types/node": "^6.0.52",
+    "nodemon": "^1.11.0",
+    "ts-node": "^1.7.2",
+    "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "js-data": "^3.0.0-rc.6",
+    "js-data-sql": "^1.0.0-beta.3",
+    "knex": "^0.12.6",
+    "mysql": "^2.12.0"
+  }
+}
